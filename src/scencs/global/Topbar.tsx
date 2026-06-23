@@ -110,6 +110,10 @@ const Topbar = ({ setIsSidebar }: TopbarProps): React.JSX.Element => {
   const isTabletOrMobile = useMediaQuery(theme.breakpoints.down("md"));
   const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  // ✅ FIX 1: সার্চ টেক্সট ট্র্যাক করার জন্য স্টেট
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+
   // State handles
   const [notiAnchor, setNotiAnchor] = useState<null | HTMLElement>(null);
   const [profileAnchor, setProfileAnchor] = useState<null | HTMLElement>(null);
@@ -127,6 +131,11 @@ const Topbar = ({ setIsSidebar }: TopbarProps): React.JSX.Element => {
   const handleProfileClose = () => {
     setProfileAnchor(null);
   };
+
+  const handleSearchSubmit = () => {
+  if (!searchQuery.trim()) return;
+  alert(`Searching for: "${searchQuery}"`); // এখানে সার্চের কাজ হবে
+};
 
   return (
     <Box 
@@ -152,10 +161,14 @@ const Topbar = ({ setIsSidebar }: TopbarProps): React.JSX.Element => {
         <InputBase
           sx={{ ml: 2, flex: 1 }}
           placeholder={isSmallMobile ? "" : "Search"} 
+          value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  onKeyDown={(e) => e.key === "Enter" && handleSearchSubmit()}
+
         />
-        <IconButton type="button" sx={{ p: 1 }}>
-          <SearchIcon />
-        </IconButton>
+       <IconButton onClick={handleSearchSubmit} type="button" sx={{ p: 1 }}>
+  <SearchIcon />
+</IconButton>
       </Box>
 
       {/* ICONS */}
