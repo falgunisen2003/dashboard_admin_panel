@@ -1,0 +1,61 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "useDefineForClassFields": true,
+        "lib": [
+            "es2020",
+            "dom",
+            "dom.iterable"
+        ],
+        "module": "esnext",
+        "moduleResolution": "node10",
+        "jsx": "react-jsx",
+        "strict": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "noEmit": true,
+        "allowSyntheticDefaultImports": true,
+        "preserveConstEnums": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictBuiltinIteratorReturn": true,
+        "alwaysStrict": true,
+        "useUnknownInCatchVariables": true
+    },
+    "files": [
+        "./src/App.tsx",
+        "./src/index.tsx",
+        "./src/theme.ts",
+        "./src/components/Barchart.tsx",
+        "./src/components/GeographyChart.tsx",
+        "./src/components/Header.tsx",
+        "./src/components/LineChart.tsx",
+        "./src/components/ProgressCircle.tsx",
+        "./src/components/StatBox.tsx",
+        "./src/components/pieChart.tsx",
+        "./src/data/mockGeoFeatures.ts",
+        "./src/data/mockdata.ts",
+        "./src/scencs/bar/index.tsx",
+        "./src/scencs/calendar/calendar.tsx",
+        "./src/scencs/contacts/index.tsx",
+        "./src/scencs/dashboard/index.tsx",
+        "./src/scencs/faq/index.tsx",
+        "./src/scencs/form/index.tsx",
+        "./src/scencs/geography/index.tsx",
+        "./src/scencs/global/Sidebar.tsx",
+        "./src/scencs/global/Topbar.tsx",
+        "./src/scencs/invoices/index.tsx",
+        "./src/scencs/line/index.tsx",
+        "./src/scencs/pie/index.tsx",
+        "./src/scencs/team/index.tsx"
+    ],
+    "include": [
+        "src"
+    ]
+}
